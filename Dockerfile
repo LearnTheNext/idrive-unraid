@@ -27,6 +27,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       tzdata \
 	  libexpat1 \
     && rm -rf /var/lib/apt/lists/*
+	
+RUN ldconfig -p | grep -q 'libexpat\.so\.1' \
+    || { echo "Missing required runtime library: libexpat.so.1"; exit 1; }
 
 RUN curl --fail --location --retry 5 --retry-delay 5 \
       --output /usr/local/share/idriveforlinux.bin \

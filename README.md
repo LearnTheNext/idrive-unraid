@@ -52,6 +52,17 @@ backing up the live Vaultwarden database.
 
 9. Schedule IDrive after the local 03:15 Vaultwarden job, for example 04:00.
 
+## Runtime dependencies
+
+The container installs `libexpat1`, which is required by IDrive's bundled
+Python dashboard executable.
+
+Without this library, IDrive may display a misleading error requesting:
+
+```text
+export LD_LIBRARY_PATH=/opt/IDriveForLinux/bin/Idrivelib/dependencies/python/lib:$LD_LIBRARY_PATH
+
+
 ## Useful commands
 
 ```bash
