@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>IDrive</Name>
+  <Repository>ghcr.io/learnthenext/idrive-unraid:latest</Repository>
+  <Registry>https://github.com/LearnTheNext/idrive-unraid/pkgs/container/idrive-unraid</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/LearnTheNext/idrive-unraid/issues</Support>
+  <Project>https://github.com/LearnTheNext/idrive-unraid</Project>
+  <Overview>Runs the official IDrive for Linux package with persistent state and read-only access to a Vaultwarden backup folder.</Overview>
+  <Category>Backup: Cloud:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://www.idrive.com/favicon.ico</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>0</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Initial IDrive installation and account configuration are interactive. Open the container console and run install-idrive.</Requires>
+  <Config Name="IDrive installation" Target="/opt/IDriveForLinux" Default="/mnt/user/appdata/idrive/opt" Mode="rw" Description="Persistent IDrive program and state directory" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Root configuration" Target="/root" Default="/mnt/user/appdata/idrive/root" Mode="rw" Description="Persistent root home for IDrive account state" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Vaultwarden backups" Target="/backup/VaultwardenNightly" Default="/mnt/user/CommunityApplicationsAppdataBackup/VaultwardenNightly" Mode="ro" Description="Read-only source containing verified Vaultwarden archives" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Timezone" Target="TZ" Default="America/Los_Angeles" Mode="" Description="Container timezone" Type="Variable" Display="always" Required="true" Mask="false"/>
+</Container>

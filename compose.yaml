@@ -1,0 +1,11 @@
+services:
+  idrive:
+    image: ghcr.io/learnthenext/idrive-unraid:latest
+    container_name: idrive
+    restart: unless-stopped
+    environment:
+      TZ: America/Los_Angeles
+    volumes:
+      - /mnt/user/appdata/idrive/opt:/opt/IDriveForLinux
+      - /mnt/user/appdata/idrive/root:/root
+      - /mnt/user/CommunityApplicationsAppdataBackup/VaultwardenNightly:/backup/VaultwardenNightly:ro
