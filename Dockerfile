@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       tini \
       tzdata \
 	  libexpat1 \
+	  nano \
     && rm -rf /var/lib/apt/lists/*
 	
 RUN ldconfig -p | grep -q 'libexpat\.so\.1' \
