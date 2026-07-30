@@ -15,6 +15,9 @@ ENV DEBIAN_FRONTEND=noninteractive \
     IDRIVE_HOME=/opt/IDriveForLinux \
     BACKUP_ROOT=/backup/VaultwardenNightly
 
+ENV EDITOR=nano
+ENV VISUAL=nano
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
       bash \
       ca-certificates \
