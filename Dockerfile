@@ -25,6 +25,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       procps \
       tini \
       tzdata \
+	  libexpat1 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl --fail --location --retry 5 --retry-delay 5 \
