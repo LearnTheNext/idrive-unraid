@@ -63,7 +63,7 @@ RUN chmod 0755 \
         /usr/local/bin/verify-backups \
         /usr/local/bin/docker-entrypoint.sh
 
-VOLUME ["/opt/IDriveForLinux", "/root", "/backup/VaultwardenNightly"]
+VOLUME ["/opt/IDriveForLinux", "/root"]
 
 HEALTHCHECK \
     --interval=5m \
